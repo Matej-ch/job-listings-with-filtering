@@ -1,0 +1,61 @@
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --ff-base: 'League Spartan', sans-serif;
+
+  --fw-regular: 500;
+  --fw-bold: 700;
+
+  --fs-base: 15px;
+
+  --clr-primary: hsl(180, 14%, 20%);
+  --clr-secondary: hsl(180, 8%, 52%);
+
+  --clr-filter: hsl(180, 31%, 95%);
+  --clr-background: hsl(180, 52%, 96%);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--clr-background);
+  width: 100%;
+  display: grid;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+  width: 100%;
+}
