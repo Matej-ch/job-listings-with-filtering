@@ -7,7 +7,7 @@ function App() {
 
     return (
         <main className="App">
-            <header>here background</header>
+            <header></header>
 
             <div className={'listings-wrapper'}>
                 {jobListings.map(listing => {

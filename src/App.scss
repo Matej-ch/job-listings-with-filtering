@@ -1,8 +1,17 @@
+header {
+  background: url("./assets/bg-header-mobile.svg");
+  background-color: var(--clr-primary);
+  height: 150px;
+  background-repeat: no-repeat;
+  margin-bottom: 3rem;
+  background-size: cover;
+}
+
 .listings-wrapper {
 
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 3rem;
 
   width: min(80%, 25rem);
   margin: 0 auto;

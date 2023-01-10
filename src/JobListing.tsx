@@ -15,22 +15,26 @@ function JobListing({listing}: { listing: JobOffer }) {
         <img src={icon} alt={'logo of company ' + listing.company}/>
 
         <div className={'basic-info'}>
-            <h1>{listing.company}</h1>
-            <div className={'pills'}>
+            <div className={'company-wrapper'}>
+                <h1>{listing.company}</h1>
+                <div className={'pills'}>
+                    {listing.new ? <JobTag tag={'New!'}/> : null}
+                    {listing.featured ? <JobTag tag={'featured'} isFeatured={true}/> : null}
+                </div>
 
-                {listing.new ? <JobTag tag={'New!'}/> : null}
-                {listing.featured ? <JobTag tag={'featured'}/> : null}
             </div>
             <div className={'position'}>{listing.position}</div>
-            <div>
-                <span className={'list-item'}>{listing.postedAt}</span>
-                <span className={'list-item'}>{listing.contract}</span>
-                <span className={'list-item'}>{listing.location}</span>
+            <div className={'list-items'}>
+                <span>{listing.postedAt}</span>
+                <i className={'bullet'}></i>
+                <span>{listing.contract}</span>
+                <i className={'bullet'}></i>
+                <span>{listing.location}</span>
             </div>
         </div>
 
         <div className={'tags'}>
-            {[listing.role, listing.position, ...listing.tools, ...listing.languages].map(tag => {
+            {[listing.role, listing.level, ...listing.tools, ...listing.languages].map(tag => {
                 return <JobTag tag={tag}/>
             })}
         </div>
