@@ -1,8 +1,6 @@
 header {
-  background: url("./assets/bg-header-mobile.svg");
-  background-color: var(--clr-primary);
   height: 150px;
-  background-repeat: no-repeat;
+  background: var(--clr-primary) url("./assets/bg-header-mobile.svg") no-repeat;
   margin-bottom: 3rem;
   background-size: cover;
 }
@@ -15,4 +13,15 @@ header {
 
   width: min(80%, 25rem);
   margin: 0 auto;
+}
+
+@media screen and (min-width: 600px) {
+  header {
+    background: var(--clr-primary) url("./assets/bg-header-desktop.svg") no-repeat;
+    background-size: cover;
+  }
+
+  .listings-wrapper {
+    width: min(80%, 75rem);
+  }
 }
