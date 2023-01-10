@@ -1,0 +1,9 @@
+.listings-wrapper {
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  width: min(80%, 25rem);
+  margin: 0 auto;
+}
