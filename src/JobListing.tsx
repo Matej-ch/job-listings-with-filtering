@@ -3,7 +3,10 @@ import JobOffer from "./JobOffer";
 import {useState} from "react";
 import JobTag from "./JobTag";
 
-function JobListing({listing}: { listing: JobOffer }) {
+function JobListing({
+                        listing,
+                        handleAddFilter
+                    }: { listing: JobOffer, handleAddFilter: (tag: string) => void }) {
 
     const [icon, setIcon] = useState<string>('');
 
@@ -18,8 +21,9 @@ function JobListing({listing}: { listing: JobOffer }) {
             <div className={'company-wrapper'}>
                 <h1>{listing.company}</h1>
                 <div className={'pills'}>
-                    {listing.new ? <JobTag tag={'New!'}/> : null}
-                    {listing.featured ? <JobTag tag={'featured'} isFeatured={true}/> : null}
+                    {listing.new ? <JobTag handleAddFilter={handleAddFilter} tag={'New!'}/> : null}
+                    {listing.featured ?
+                        <JobTag handleAddFilter={handleAddFilter} tag={'featured'} isFeatured={true}/> : null}
                 </div>
 
             </div>
@@ -34,8 +38,8 @@ function JobListing({listing}: { listing: JobOffer }) {
         </div>
 
         <div className={'tags'}>
-            {[listing.role, listing.level, ...listing.tools, ...listing.languages].map(tag => {
-                return <JobTag tag={tag}/>
+            {[listing.role, listing.level, ...listing.tools, ...listing.languages].map((tag, index) => {
+                return <JobTag tag={tag} handleAddFilter={handleAddFilter} key={index}/>
             })}
         </div>
     </article>);

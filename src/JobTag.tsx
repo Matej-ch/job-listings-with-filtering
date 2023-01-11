@@ -1,7 +1,11 @@
 import './JobTag.scss'
 
-function JobTag({tag, isFeatured = false}: { tag: string, isFeatured?: Boolean }) {
-    return (<span className={isFeatured ? 'feature' : ''}>{tag}</span>);
+function JobTag({
+                    tag,
+                    isFeatured = false,
+                    handleAddFilter
+                }: { tag: string, isFeatured?: Boolean, handleAddFilter: (tag: string) => void }) {
+    return (<span className={isFeatured ? 'feature' : ''} onClick={() => handleAddFilter(tag)}>{tag}</span>);
 }
 
 export default JobTag

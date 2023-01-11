@@ -1,0 +1,75 @@
+.job-filter {
+
+  padding: 1.5rem;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: absolute;
+  border-radius: 8px;
+  bottom: -1.5rem;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: min(80%, 25rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .removable-tag {
+    font-size: 1.05rem;
+    color: var(--clr-primary);
+    font-weight: var(--fw-bold);
+    background-color: var(--clr-background);
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+
+    .name {
+      padding: 0.25rem 0.5rem;
+    }
+
+
+    .remove {
+      background-color: var(--clr-primary);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      cursor: pointer;
+      transition: background-color 300ms;
+
+      &:hover {
+        background-color: var(--clr-primary-dark);
+      }
+    }
+
+    .remove::before {
+      content: '\00D7';
+    }
+  }
+
+  .clear {
+    color: var(--clr-secondary);
+    font-weight: var(--fw-bold);
+    text-decoration: none;
+    font-size: 1.05rem;
+    transition: color 300ms;
+
+    &:hover {
+      color: var(--clr-primary);
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .job-filter {
+    width: min(80%, 75rem);
+  }
+}

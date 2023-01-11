@@ -73,7 +73,7 @@ article {
   }
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   article {
 
     display: grid;
@@ -85,7 +85,7 @@ article {
 
     img {
       position: relative;
-      width: 88px;
+      width: 80px;
       top: unset;
     }
 
@@ -95,6 +95,11 @@ article {
 
     .tags {
       flex-direction: row-reverse;
+    }
+
+    .position {
+      padding-top: 0.4rem;
+      padding-bottom: 0.4rem;
     }
   }
 }

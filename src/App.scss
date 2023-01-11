@@ -3,6 +3,7 @@ header {
   background: var(--clr-primary) url("./assets/bg-header-mobile.svg") no-repeat;
   margin-bottom: 3rem;
   background-size: cover;
+  position: relative;
 }
 
 .listings-wrapper {
@@ -15,7 +16,7 @@ header {
   margin: 0 auto;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 700px) {
   header {
     background: var(--clr-primary) url("./assets/bg-header-desktop.svg") no-repeat;
     background-size: cover;
