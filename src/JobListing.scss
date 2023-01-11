@@ -7,7 +7,11 @@ article {
   background-color: white;
   position: relative;
   border-radius: 8px;
-  border-left: 5px solid var(--clr-primary);
+
+
+  &.featured {
+    border-left: 5px solid var(--clr-primary);
+  }
 
   img {
     width: 60px;
@@ -58,6 +62,32 @@ article {
 
     .bullet::after {
       content: ' \2022';
+    }
+  }
+}
+
+@media screen and (min-width: 600px) {
+  article {
+
+    display: grid;
+    grid-template-columns: fit-content(30%) 2fr 2fr;
+    align-items: center;
+    gap: 1rem;
+
+    padding: 1rem 2rem;
+
+    img {
+      position: relative;
+      width: 88px;
+      top: unset;
+    }
+
+    .list-items {
+      border-bottom: 0;
+    }
+
+    .tags {
+      flex-direction: row-reverse;
     }
   }
 }

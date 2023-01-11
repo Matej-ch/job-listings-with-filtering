@@ -11,7 +11,7 @@ function JobListing({listing}: { listing: JobOffer }) {
         setIcon(image.default)
     });
 
-    return (<article>
+    return (<article className={listing.featured ? 'featured' : ''}>
         <img src={icon} alt={'logo of company ' + listing.company}/>
 
         <div className={'basic-info'}>
