@@ -11,6 +11,11 @@ function App() {
     const [filters, setFilters] = useState<Array<string>>([]);
 
     const handleAddFilter = (tag: string): void => {
+
+        if (filters.includes(tag)) {
+            return;
+        }
+
         setFilters(oldFilters => [...oldFilters, tag]);
         setFilteredListings(filteredListings.filter(listing => [listing.level, listing.role, ...listing.tools, ...listing.languages].includes(tag)));
     }
@@ -21,9 +26,16 @@ function App() {
     }
 
     const removeFilter = (tag: string): void => {
-        setFilters(filters.filter(t => t !== tag));
+        const newFilters = filters.filter(t => t !== tag);
 
-        setFilteredListings(jobListings.filter(listing => [listing.level, listing.role, ...listing.tools, ...listing.languages].some(item => filters.includes(item))));
+        setFilters(newFilters);
+
+        if (newFilters.length) {
+            setFilteredListings(jobListings.filter(listing => newFilters.every(item => [listing.level, listing.role, ...listing.tools, ...listing.languages].includes(item))));
+            return;
+        }
+
+        setFilteredListings(jobListings);
     }
 
     return (
