@@ -50,6 +50,13 @@ article {
     font-size: 1.2rem;
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+    transition: color 300ms;
+
+    cursor: pointer;
+
+    &:hover {
+      color: var(--clr-primary);
+    }
   }
 
   .list-items {

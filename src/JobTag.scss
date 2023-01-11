@@ -4,9 +4,12 @@
   background-color: var(--clr-background);
   border-radius: 2px;
   padding: 0.25rem 0.5rem;
+  transition: background-color 300ms, color 300ms;
 
   &:hover {
     cursor: pointer;
+    color: white;
+    background-color: var(--clr-primary);
   }
 }
 
